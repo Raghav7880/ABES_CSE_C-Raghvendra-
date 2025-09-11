@@ -7,12 +7,12 @@
 </head>
 <body>
     <script>
-        var x=20;
-        if(x%2==0){
-            document.write("Number is Even");
-        }else{
-            document.write("Number is Odd");
+        let nums = [];
+        for (let i = 0; i < 4; i++) {
+            nums.push(Number(prompt(`Enter number ${i + 1}:`)));
         }
+        nums.sort((a, b) => b - a);
+        alert("The 2nd largest number is: " + nums[1]);
     </script>
 </body>
 </html>
