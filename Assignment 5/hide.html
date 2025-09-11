@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hide Image Example</title>
+  <style>
+    #card {
+      height: 250px;
+      width: 250px;
+      justify-content: center;
+      border: 2px solid black;
+      text-align: center;
+      padding: 5px;
+    }
+
+    img {
+      height: 200px;
+      width: 250px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #hide {
+      border-radius: 5px;
+      background-color: antiquewhite;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="card">
+    <img src="R.jpg" alt="Sample Image" id="myImage">
+    <button onclick="imgHide()" id="hide">Hide</button>
+  </div>
+
+  <script>
+    function imgHide() {
+      const image = document.getElementById("myImage");
+      image.style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
