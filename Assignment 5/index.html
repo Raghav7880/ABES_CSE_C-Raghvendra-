@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <style>
+    #card {
+      width: 300px;
+      height: 250px;
+      border: 2px solid black;
+      text-align: center;
+      margin: auto;
+      margin-top: 100px;
+      padding-top: 20px;
+      border-radius: 20px;
+      background-color: lightcyan;
+    }
+
+    .btn {
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    #header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        gap: 10px;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="card">
+    <div id="header">
+    <img src="logo.jpg" alt="logo">
+    <h1>Counter App</h1>
+    </div>
+    <h1 id="count">0</h1>
+    <button class="btn" onclick="increment()">+</button>
+    <button class="btn" onclick="decrement()">-</button>
+  </div>
+
+  <script>
+    let count = 0;
+    function increment() {
+      if (count < 10) {
+        count++;
+        document.getElementById("count").innerText = count;
+        if (count === 10) alert("Maximum limit reached");
+      }
+    }
+
+    function decrement() {
+      if (count > 0) {
+        count--;
+        document.getElementById("count").innerText = count;
+        if (count === 0) alert("Minimum limit reached");
+      }
+    }
+  </script>
+</body>
+
+</html>
