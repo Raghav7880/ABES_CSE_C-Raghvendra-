@@ -7,16 +7,25 @@
 </head>
 <body>
     <p id="raghav"></p>
-    <h1 id="car"></h1>
+    <h3 id="car"></h3>
     <script>
+        //1st Method
         var car=["car1","car2","car3","car4"];
+        document.getElementById("raghav").innerHTML=car;
         car[2]="apple";
         document.getElementById("raghav").innerHTML=car;
 
+
+        //2nd Method
+        var car2=new Array("car5","car6","car7","car4");
+        document.getElementById("raghav").innerHTML=car;
+
+
+        //3rd method
         var car1=[];
         var a=prompt("Enter number of cars");
         for(var i=1;i<=a;i++){
-            car1=prompt("Enter car name");
+            car1[i]=prompt("Enter car name");
         }
         document.getElementById("car").innerHTML=car1;
     </script>
