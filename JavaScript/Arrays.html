@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <p id="raghav"></p>
+    <h1 id="car"></h1>
+    <script>
+        var car=["car1","car2","car3","car4"];
+        car[2]="apple";
+        document.getElementById("raghav").innerHTML=car;
+
+        var car1=[];
+        var a=prompt("Enter number of cars");
+        for(var i=1;i<=a;i++){
+            car1=prompt("Enter car name");
+        }
+        document.getElementById("car").innerHTML=car1;
+    </script>
+</body>
+</html>
