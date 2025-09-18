@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class In JS</title>
+</head>
+<body>
+    <p id="raghav"></p>
+    <script>
+        class Car{
+            constructor(name,year){
+                this.name=name;
+                this.year=year;
+            }
+        }
+        const mycar1=new Car("Ford",2024);
+        const mycar12=new Car("Audi",2025);
+
+        document.getElementById("raghav").innerHTML=mycar1.name+" "+mycar1.year;
+    </script>
+</body>
+</html>

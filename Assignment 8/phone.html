@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .phones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .phone {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        flex: 1 1 30%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    img {
+        max-width: 100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>PHONE</h1>
+        <div class="phones">
+            <div class="phone">
+                <img src="" alt="" id="image">
+                <p id="phoneName"></p>
+                <p id="phonePrice"></p>
+            </div>
+            <div class="phone">
+                <img src="" alt="" id="image">
+                <p id="phoneName"></p>
+                <p id="phonePrice"></p>
+            </div>
+            <div class="phone">
+                <img src="" alt="" id="image">
+                <p id="phoneName"></p>
+                <p id="phonePrice"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const phone = [
+            { name: "I-PHONE", price: 999, img: "https://i.guim.co.uk/img/media/18badfc0b64b09f917fd14bbe47d73fd92feeb27/189_335_5080_3048/master/5080.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=1562112c7a64da36ae0a5e75075a0d12" },
+
+            { name: "SAMSUNG", price: 999, img: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTGBLgryToLKYokLgf0qbhSIwg0SQKnvp1WxZfFkFKHrnwR8cYDurpR6Cg2vMnLHQaCK2zr_urlLrChY-OVZ5YLbnA-0Gmn4hjN-AeoXcOtT-xLObE6G4CUNA" },
+
+            { name: "ONEPLUS", price: 599, img: "https://image01-in.oneplus.net/media/202412/17/052a246708df8233d079b3502aeeb327.png" },
+        ];
+
+        const phoneDivs = document.querySelectorAll(".phone");
+        phone.forEach((item, index) => {
+
+            if (index < phoneDivs.length) {
+
+                const nameElement = phoneDivs[index].querySelector("#phoneName");
+
+                const priceElement = phoneDivs[index].querySelector("#phonePrice");
+                const imagesss = phoneDivs[index].querySelector("#image");
+                nameElement.textContent = item.name;
+                priceElement.textContent = `$${ item.price }`;
+                imagesss.src = item.img;
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

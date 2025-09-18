@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .tvs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .tv {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        flex: 1 1 30%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    img {
+        max-width: 250px;
+        height: 150px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>TV</h1>
+        <div class="tvs">
+            <div class="tv">
+                <p class="tvName"></p>
+                <p class="tvPrice"></p>
+                <img src="" alt="" class="tvImage">
+            </div>
+            <div class="tv">
+                <p class="tvName"></p>
+                <p class="tvPrice"></p>
+                <img src="" alt="" class="tvImage">
+            </div>
+            <div class="tv">
+                <p class="tvName"></p>
+                <p class="tvPrice"></p>
+                <img src="" alt="" class="tvImage">
+            </div>
+        </div>
+    </div>
+    <script>
+        const tvs = [
+            { name: "SONY BRAVIA", price: 1200, img: "https://www.sony.co.in/image/sony-bravia-tv.jpg" },
+            { name: "SAMSUNG QLED", price: 1100, img: "https://images.samsung.com/is/image/samsung/p6pim/in/qa55q60bakxxl/gallery/in-qled-q60b-qa55q60bakxxl-533678098?$650_519_PNG$" },
+            { name: "LG OLED", price: 1300, img: "https://www.lg.com/in/images/tvs/md07506399/gallery/medium01.jpg" },
+        ];
+
+        const tvDivs = document.querySelectorAll(".tv");
+        tvs.forEach((item, index) => {
+            if (index < tvDivs.length) {
+                const nameElement = tvDivs[index].querySelector(".tvName");
+                const priceElement = tvDivs[index].querySelector(".tvPrice");
+                const imageElement = tvDivs[index].querySelector(".tvImage");
+                nameElement.textContent = item.name;
+                priceElement.textContent = `$${item.price}`;
+                imageElement.src = item.img;
+            }
+        });
+    </script>
+</body>
+</html>

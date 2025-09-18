@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game List</title>
+</head>
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .games {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .game {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        flex: 1 1 30%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    img {
+        max-width: 250px;
+        height: 150px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>GAMES</h1>
+        <div class="games">
+            <div class="game">
+                <img src="" alt="" class="gameImage">
+                <p class="gameName"></p>
+                <p class="gamePrice"></p>
+            </div>
+            <div class="game">
+                <img src="" alt="" class="gameImage">
+                <p class="gameName"></p>
+                <p class="gamePrice"></p>
+            </div>
+            <div class="game">
+                <img src="" alt="" class="gameImage">
+                <p class="gameName"></p>
+                <p class="gamePrice"></p>
+            </div>
+            
+            
+        </div>
+    </div>
+    <script>
+        const games = [
+            { name: "Minecraft", price: 29.99, img: "https://th.bing.com/th/id/R.f287f9d5df22fc0c4c7f6c01a358de31?rik=ec8UcVVeE3VlAg&riu=http%3a%2f%2fbitfracture.com%2fimages%2fmeta%2ftech_minecraft.jpg&ehk=vAfhnCcN8l2Vh0nx5fFnE%2bvaTGaXBDrSdLHS74pIhn0%3d&risl=&pid=ImgRaw&r=0" },
+            { name: "Fortnite", price: 0, img: "https://tse4.mm.bing.net/th/id/OIP.lXGKgEapQmdaC8TSdWDiuwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" },
+            { name: "Among Us", price: 4.99, img: "https://cdn.oneesports.gg/cdn-data/wp-content/uploads/2020/09/Among_Us.jpg" },
+        ];
+
+        const gameDivs = document.querySelectorAll(".game");
+        games.forEach((item, index) => {
+            if (index < gameDivs.length) {
+                const nameElement = gameDivs[index].querySelector(".gameName");
+                const priceElement = gameDivs[index].querySelector(".gamePrice");
+                const imageElement = gameDivs[index].querySelector(".gameImage");
+                nameElement.textContent = item.name;
+                priceElement.textContent = item.price === 0 ? "Free" : `$${item.price}`;
+                imageElement.src = item.img;
+                imageElement.alt = item.name;
+            }
+        });
+    </script>
+</body>
+</html>

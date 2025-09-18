@@ -1,0 +1,30 @@
+#container{
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: lightgrey;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    border: 1px solid black;
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 5px grey;
+}
+#header{
+    text-align: center;
+    background-color: darkgrey;
+    padding: 10px;
+    border: 1px solid black;
+}
+cards.img{
+    width: 100%;
+    height: auto;
+}
