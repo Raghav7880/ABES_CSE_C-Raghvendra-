@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="raghav"></p>
+    <script>
+        function abes(){
+            document.getElementById("raghav").innerHTML="hello world";
+        }
+        abes();
+        let hello=function(){
+            document.getElementById("raghav").innerHTML="hello world from let function";
+        }
+        hello();
+        const add=(a,b)=>(a+b);
+        document.write(add(10,20));
+    </script>
+</body>
+</html>
