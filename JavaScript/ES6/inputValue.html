@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <input type="text" id="raghav" placeholder="Enter something">
+    <button onclick="abes()">CLICK</button>
+    <h1 id="para"></h1>
+    <script>
+        function abes(){
+            const InputField=document.getElementById("raghav");
+            const InputText=InputField.value;
+            //document.write(InputText);
+            document.getElementById("para").innerHTML=InputText;
+        }
+    </script>
+</body>
+</html>
