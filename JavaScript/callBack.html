@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>callback Function</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        function sum(a,b){
-            console.log(a+b);
-        }
-        function calc(a,b,sumcallback){
-            sumcallback(a,b);
-        }
-        calc(5,602,sum);
+      //Callback hell
+      function getData(dataid, getNextData) {
+        setTimeout(() => {
+          console.log(dataid);
+          if (getNextData) {
+            getNextData();
+          }
+        }, 2000);
+      }
+      getData("Raghvendra", () => {
+        getData("Pathak", () => {
+          getData("Cse", () => {
+            getData("3rd Year");
+          });
+        });
+      });
+
+      //function sum(a,b){
+      //   console.log(a+b);
+      //}
+      //function calc(a,b,callback){
+      //    callback(a,b);
+      //}
+      //calc(5,602,sum);
     </script>
-</body>
+  </body>
 </html>
