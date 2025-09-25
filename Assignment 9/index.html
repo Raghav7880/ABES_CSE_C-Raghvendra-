@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            display: flex;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        div {
+            max-width: 400px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+        }
+
+        form div:first-child {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #ddd;
+            display: block;
+            margin: 0 auto 16px auto;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px 16px;
+            background: #0078d4;
+            color: #fff;
+        }
+
+    </style>
 </head>
+
 <body>
-    
+
+    <div id="resume">
+        <form action="">
+            <div id="header">
+                <img src="" alt="">
+                <div>
+                    <input type="text" placeholder="Enter your name" id="name">
+                    <button onclick="">Click</button> <br>
+                    <p>B.Tech</p>
+                </div>
+            </div>
+            
+    </div>
+    <div>
+        <h2>Know Language</h2>
+        <ul>
+            <li><input type="text" id="skill1"></li>
+            <li><input type="text" id="skill1"></li>
+            <li><input type="text" id="skill1"></li>
+        </ul>
+    </div>
+    </form>
+    </div>
+    <script>
+        document.querySelector('button').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const nameInput = document.getElementById('name');
+            nameInput.style.display = 'none';
+            const nameText = document.createElement('span');
+            nameText.textContent = nameInput.value;
+            nameInput.parentNode.insertBefore(nameText, nameInput);
+
+
+            const skillInputs = document.querySelectorAll('#skill1');
+            skillInputs.forEach(function (input) {
+                input.style.display = 'none';
+                const skillText = document.createElement('span');
+                skillText.textContent = input.value;
+                input.parentNode.insertBefore(skillText, input);
+            });
+        });
+    </script>
 </body>
+
 </html>
