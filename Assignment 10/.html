@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <style>
+      .first {
+        border: 2px solid black;
+        max-width: 400px;
+        background-color: antiquewhite;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        border-radius: 15px;
+        margin: auto;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-bottom: 2rem;
+      }
+      .navbar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 1rem;
+      }
+      .box {
+        display: flex;
+        gap: 10px;
+      }
+      .card {
+        border: 2px solid black;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 1rem;
+        background: #f9f9f9;
+        border-radius: 10px;
+      }
+      .card h2 {
+        margin-top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <section class="first">
+        <div class="navbar">
+          <img src="###" alt="" />
+          <h1>To-Do List</h1>
+        </div>
+        <form id="form">
+          <div class="box">
+            <input type="text" placeholder="Add your task here" class="task" />
+            <button onclick="addTask(event)">+</button>
+          </div>
+        </form>
+        <button id="submitbtn" onclick="showAllTasks(event)">
+          List of All
+        </button>
+      </section>
+
+      <section class="second" style="display: none">
+        <div class="card">
+          <h2>All Tasks</h2>
+          <ul id="tasklist"></ul>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function addTask(event) {
+        event.preventDefault();
+
+        const newTask = document.createElement("input");
+        newTask.type = "text";
+        newTask.placeholder = "Add your task here";
+        newTask.className = "task";
+
+        const newbtn = document.createElement("button");
+        newbtn.innerText = "+";
+        newbtn.onclick = addTask;
+
+        const newbox = document.createElement("div");
+        newbox.className = "box";
+        newbox.appendChild(newTask);
+        newbox.appendChild(newbtn);
+
+        document.querySelector("#form").appendChild(newbox);
+      }
+
+      function showAllTasks(event) {
+        event.preventDefault();
+        const allTasks = document.querySelectorAll(".task");
+        const ul = document.getElementById("tasklist");
+        ul.innerHTML = "";
+
+        allTasks.forEach((task) => {
+          if (task.value.trim() !== "") {
+            const li = document.createElement("li");
+            li.innerText = task.value;
+            ul.appendChild(li);
+          }
+        });
+
+        document.querySelector(".second").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
