@@ -17,6 +17,18 @@
             alert(result);
         }
         func1();
+
+
+        const fun = async ()=>{
+            let promise =new Promise((resolve, reject)=>{
+                setTimeout(() =>{
+                    resolve("hello world");
+                }, 2000);
+                });
+            let result = await promise; 
+            alert(result);
+        }
+        fun();
     </script>
 </body>
 </html>
